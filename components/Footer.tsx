@@ -40,15 +40,15 @@ export default function Footer() {
         {/* <p>Terms of Service</p> */}
         {/* <p>Privacy Policy</p> */}
       </div>
-      <div className="flex gap-[24px] flex-wrap">
+      <div className="flex gap-[4px] flex-wrap">
+        Website Designed, Developed, and Maintained by
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4 font-bold"
           href="https://danielle-andrews.devdecks.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Website Designed, Developed, and Maintained by Danielle
-          Andrews
+          Danielle Andrews
         </a>
       </div>
     </footer>
