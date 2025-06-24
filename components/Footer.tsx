@@ -37,8 +37,8 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Tahuya River Valley Water
           District. All rights reserved.
         </i>
-        <p>Terms of Service</p>
-        <p>Privacy Policy</p>
+        {/* <p>Terms of Service</p> */}
+        {/* <p>Privacy Policy</p> */}
       </div>
       <div className="flex gap-[24px] flex-wrap">
         <a
