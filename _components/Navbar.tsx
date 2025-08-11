@@ -5,10 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Dialog, DialogPanel, PopoverGroup } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { PhoneIcon } from '@heroicons/react/24/solid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWater } from '@fortawesome/free-solid-svg-icons';
+import { FaXmark, FaPhone, FaWater } from 'react-icons/fa6';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,11 +48,7 @@ export default function Navbar() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
           >
             <span className="sr-only">Open main menu</span>
-            <FontAwesomeIcon
-              icon={faWater}
-              aria-hidden="true"
-              className="size-6"
-            />
+            <FaWater aria-hidden="true" className="size-6" />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
@@ -79,7 +72,7 @@ export default function Navbar() {
             className="text-sm/6 font-semibold"
           >
             <span aria-hidden="true">
-              <PhoneIcon className="inline size-4" />
+              <FaPhone className="inline size-4" />
             </span>{' '}
             (360) 275-0279
           </Link>
@@ -111,7 +104,7 @@ export default function Navbar() {
               className="-m-2.5 rounded-md p-2.5"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
+              <FaXmark aria-hidden="true" className="size-6" />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -137,7 +130,7 @@ export default function Navbar() {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-stone-100 dark:hover:bg-stone-600"
                 >
                   <span aria-hidden="true">
-                    <PhoneIcon className="inline size-4" />
+                    <FaPhone className="inline size-4" />
                   </span>{' '}
                   (360) 275-0279
                 </Link>

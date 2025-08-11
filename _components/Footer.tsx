@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { FaFacebook } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -12,11 +11,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           title="Tahuya River Valley Community Facebook Page"
         >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="fa-2x"
-            color="#3a96ab"
-          />
+          <FaFacebook className="fa-2x" color="#3a96ab" />
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -25,11 +20,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           title="Crime Awareness In Tahuya River Valley & Surrounding Areas Facebook Group (Private)"
         >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="fa-2x"
-            color="#3a96ab"
-          />
+          <FaFacebook className="fa-2x" color="#3a96ab" />
         </a>
       </div>
       <div className="flex gap-[24px] flex-wrap">
