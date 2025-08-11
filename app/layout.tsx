@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-config.autoAddCss = false;
-
 import Navbar from '@/_components/Navbar';
 import Footer from '@/_components/Footer';
 
@@ -22,6 +17,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Tahuaya River Valley Water District',
   description: 'Tahuya River Valley Water District website',
+  keywords: [
+    'Tahuya',
+    'Tahuya River Valley',
+    'water district',
+    'Tahuya River Valley Water District',
+    'TRVWD',
+    'Tahuya River Valley Community',
+    'TRVCC',
+  ],
 };
 
 export default function RootLayout({
