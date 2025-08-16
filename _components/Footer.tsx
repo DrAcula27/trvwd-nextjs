@@ -2,7 +2,7 @@ import { FaFacebook } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
-    <footer className="row-start-3 flex flex-col gap-[24px] flex-wrap items-center justify-center p-8">
+    <footer className="flex flex-col gap-[24px] flex-wrap items-center justify-center p-8">
       <div className="flex gap-[24px] flex-wrap">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
