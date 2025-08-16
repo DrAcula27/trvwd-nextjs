@@ -84,6 +84,7 @@ export default function Navbar() {
               (360) 275-0279
             </Link>
           </div>
+
           {/* mobile menu button */}
           <button
             type="button"
@@ -107,6 +108,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-stone-100 dark:hover:bg-stone-600 ${
                       pathname === link.href
                         ? 'bg-blue-100 text-primary-700 dark:bg-blue-300 hover:text-primary-100'
