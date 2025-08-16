@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PopoverGroup } from '@headlessui/react';
 import { FaXmark, FaPhone, FaWater } from 'react-icons/fa6';
 
@@ -11,6 +11,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -28,6 +30,24 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target as Node)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () =>
+      document.removeEventListener('mousedown', handleClickOutside);
+  }, [mobileMenuOpen]);
 
   return (
     <header
@@ -87,9 +107,12 @@ export default function Navbar() {
 
           {/* mobile menu button */}
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 hover:text-primary-500 transition-colors"
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
               <FaXmark size={24} />
@@ -101,7 +124,10 @@ export default function Navbar() {
 
         {/* for mobile menu button */}
         {mobileMenuOpen && (
-          <div className="mt-6 flow-root bg-white dark:bg-charcoal">
+          <div
+            ref={mobileMenuRef}
+            className="mt-6 flow-root bg-white dark:bg-charcoal"
+          >
             <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-300/20">
               <div className="space-y-2 py-6">
                 {navLinks.map((link) => (
