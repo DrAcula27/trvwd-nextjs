@@ -6,6 +6,9 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { PopoverGroup } from '@headlessui/react';
 import { FaXmark, FaPhone, FaWater } from 'react-icons/fa6';
+// import ThemeToggle from './ThemeToggle';
+// import { ThemeSelector } from './ThemeToggle';
+import { CustomThemeSelector } from './ThemeToggle';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +54,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`row-start-1 fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-secondary-500 dark:bg-secondary-900/80 backdrop-blur-md shadow-sm text-neutral-100'
           : 'bg-transparent'
@@ -72,7 +75,9 @@ export default function Navbar() {
                 height={32}
               />
             </Link>
-            {/* TODO: add dark mode toggle */}
+            {/* <ThemeToggle /> */}
+            {/* <ThemeSelector /> */}
+            <CustomThemeSelector />
           </div>
 
           {/* links to other pages */}
