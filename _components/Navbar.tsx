@@ -27,7 +27,6 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -52,8 +51,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`row-start-1 fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-lg shadow-sm' : 'bg-transparent'
+      className={`nav-header ${
+        isScrolled ? 'nav-header-scrolled' : 'nav-header-transparent'
       }`}
     >
       <nav
@@ -75,46 +74,14 @@ export default function Navbar() {
           </div>
 
           {/* navigation links */}
-          <PopoverGroup className="hidden lg:flex items-center space-x-8">
+          <PopoverGroup className="hidden lg:flex items-center space-x-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm/6 font-semibold px-4 py-2 m-1 border-1 rounded-lg ${
-                  pathname === link.href
-                    ? 'cursor-default'
-                    : 'hover:opacity-80 transition-opacity'
+                className={`nav-link ${
+                  pathname === link.href ? 'nav-link-active' : ''
                 }`}
-                style={{
-                  color:
-                    pathname === link.href
-                      ? 'var(--primary)'
-                      : 'currentColor',
-                  borderColor:
-                    pathname === link.href
-                      ? 'var(--primary)'
-                      : 'var(--border)',
-                }}
-                onMouseEnter={(e) => {
-                  if (pathname !== link.href) {
-                    e.currentTarget.style.backgroundColor =
-                      'var(--primary)';
-                    e.currentTarget.style.borderColor =
-                      'var(--primary)';
-                    e.currentTarget.style.color =
-                      'var(--primary-foreground)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (pathname !== link.href) {
-                    e.currentTarget.style.backgroundColor =
-                      'transparent';
-                    e.currentTarget.style.borderColor =
-                      'var(--border)';
-                    e.currentTarget.style.color =
-                      'var(--card-foreground)';
-                  }
-                }}
               >
                 {link.label}
               </Link>
@@ -125,13 +92,11 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="tel:3602750279"
-              className="text-sm/6 font-semibold transition-colors hover:opacity-80"
+              className="nav-phone"
               title="Call Tahuya River Valley Water District"
               aria-label="Call Tahuya River Valley Water District"
             >
-              <span aria-hidden="true">
-                <FaPhone className="inline size-4" />
-              </span>{' '}
+              <FaPhone className="inline size-4 mr-2" />
               (360) 275-0279
             </Link>
           </div>
@@ -141,7 +106,7 @@ export default function Navbar() {
             ref={menuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 transition-colors hover:opacity-80 cursor-pointer"
+            className="nav-mobile-button"
             aria-label="Toggle mobile menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -155,94 +120,32 @@ export default function Navbar() {
 
         {/* mobile menu */}
         {mobileMenuOpen && (
-          <div
-            ref={mobileMenuRef}
-            className="mt-4 flow-root rounded-lg border shadow-lg"
-            style={{
-              backgroundColor: 'var(--card)',
-              color: 'var(--card-foreground)',
-              borderColor: 'var(--border)',
-              boxShadow: 'var(--shadow-lg)',
-            }}
-          >
-            <div
-              className=""
-              style={{ borderColor: 'var(--border)' }}
+          <div ref={mobileMenuRef} className="nav-mobile-menu">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`nav-mobile-item ${
+                  pathname === link.href
+                    ? 'nav-mobile-item-active'
+                    : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <Link
+              href="tel:3602750279"
+              onClick={() => setMobileMenuOpen(false)}
+              className="nav-mobile-phone"
+              title="Call Tahuya River Valley Water District"
+              aria-label="Call Tahuya River Valley Water District"
             >
-              <div className="">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-3 py-4 first:rounded-t-lg border-b-1 text-base/7 font-semibold transition-all ${
-                      pathname === link.href
-                        ? 'cursor-default'
-                        : 'hover:opacity-80 transition-opacity'
-                    }`}
-                    style={{
-                      backgroundColor:
-                        pathname === link.href
-                          ? 'var(--input)'
-                          : 'transparent',
-                      color:
-                        pathname === link.href
-                          ? 'var(--accent-foreground)'
-                          : 'var(--card-foreground)',
-                      borderColor: 'var(--border)',
-                    }}
-                    onMouseEnter={(e) => {
-                      if (pathname !== link.href) {
-                        e.currentTarget.style.backgroundColor =
-                          'var(--primary)';
-                        e.currentTarget.style.color =
-                          'var(--primary-foreground)';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (pathname !== link.href) {
-                        e.currentTarget.style.backgroundColor =
-                          'transparent';
-                        e.currentTarget.style.color =
-                          'var(--card-foreground)';
-                      }
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-              <div className="">
-                <Link
-                  href="tel:3602750279"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-4 border-t-1 rounded-b-lg text-base/7 font-semibold transition-colors"
-                  style={{
-                    color: 'var(--card-foreground)',
-                    borderColor: 'var(--border)',
-                  }}
-                  title="Call Tahuya River Valley Water District"
-                  aria-label="Call Tahuya River Valley Water District"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor =
-                      'var(--primary)';
-                    e.currentTarget.style.color =
-                      'var(--primary-foreground)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor =
-                      'transparent';
-                    e.currentTarget.style.color =
-                      'var(--card-foreground)';
-                  }}
-                >
-                  <span aria-hidden="true">
-                    <FaPhone className="inline size-4" />
-                  </span>{' '}
-                  (360) 275-0279
-                </Link>
-              </div>
-            </div>
+              <FaPhone className="inline size-4 mr-2" />
+              (360) 275-0279
+            </Link>
           </div>
         )}
       </nav>
