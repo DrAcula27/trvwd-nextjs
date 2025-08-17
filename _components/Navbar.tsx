@@ -6,8 +6,6 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { PopoverGroup } from '@headlessui/react';
 import { FaXmark, FaPhone, FaWater } from 'react-icons/fa6';
-// import ThemeToggle from './ThemeToggle';
-// import { ThemeSelector } from './ThemeToggle';
 import { CustomThemeSelector } from './ThemeToggle';
 
 export default function Navbar() {
@@ -55,9 +53,7 @@ export default function Navbar() {
   return (
     <header
       className={`row-start-1 fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-secondary-500 dark:bg-secondary-900/80 backdrop-blur-md shadow-sm text-neutral-100'
-          : 'bg-transparent'
+        isScrolled ? 'backdrop-blur-lg shadow-sm' : 'bg-transparent'
       }`}
     >
       <nav
@@ -65,7 +61,7 @@ export default function Navbar() {
         className="container mx-auto px-6 py-4"
       >
         <div className="flex items-center justify-between">
-          {/* logo & dark mode toggle */}
+          {/* logo & theme selector */}
           <div className="flex items-center space-x-4">
             <Link href="/" className="cursor-pointer">
               <Image
@@ -75,22 +71,50 @@ export default function Navbar() {
                 height={32}
               />
             </Link>
-            {/* <ThemeToggle /> */}
-            {/* <ThemeSelector /> */}
             <CustomThemeSelector />
           </div>
 
-          {/* links to other pages */}
+          {/* navigation links */}
           <PopoverGroup className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm/6 font-semibold ${
+                className={`text-sm/6 font-semibold px-4 py-2 m-1 border-1 rounded-lg ${
                   pathname === link.href
-                    ? 'text-primary-600 dark:text-primary-100 cursor-default'
-                    : 'hover:text-primary-300 dark:hover:text-primary-400'
+                    ? 'cursor-default'
+                    : 'hover:opacity-80 transition-opacity'
                 }`}
+                style={{
+                  color:
+                    pathname === link.href
+                      ? 'var(--primary)'
+                      : 'currentColor',
+                  borderColor:
+                    pathname === link.href
+                      ? 'var(--primary)'
+                      : 'var(--border)',
+                }}
+                onMouseEnter={(e) => {
+                  if (pathname !== link.href) {
+                    e.currentTarget.style.backgroundColor =
+                      'var(--primary)';
+                    e.currentTarget.style.borderColor =
+                      'var(--primary)';
+                    e.currentTarget.style.color =
+                      'var(--primary-foreground)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (pathname !== link.href) {
+                    e.currentTarget.style.backgroundColor =
+                      'transparent';
+                    e.currentTarget.style.borderColor =
+                      'var(--border)';
+                    e.currentTarget.style.color =
+                      'var(--card-foreground)';
+                  }
+                }}
               >
                 {link.label}
               </Link>
@@ -101,7 +125,9 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="tel:3602750279"
-              className="text-sm/6 font-semibold hover:text-primary-500"
+              className="text-sm/6 font-semibold transition-colors hover:opacity-80"
+              title="Call Tahuya River Valley Water District"
+              aria-label="Call Tahuya River Valley Water District"
             >
               <span aria-hidden="true">
                 <FaPhone className="inline size-4" />
@@ -115,7 +141,7 @@ export default function Navbar() {
             ref={menuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 hover:text-primary-500 transition-colors"
+            className="lg:hidden p-2 transition-colors hover:opacity-80 cursor-pointer"
             aria-label="Toggle mobile menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -127,33 +153,88 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* for mobile menu button */}
+        {/* mobile menu */}
         {mobileMenuOpen && (
           <div
             ref={mobileMenuRef}
-            className="mt-6 flow-root bg-white dark:bg-charcoal"
+            className="mt-4 flow-root rounded-lg border shadow-lg"
+            style={{
+              backgroundColor: 'var(--card)',
+              color: 'var(--card-foreground)',
+              borderColor: 'var(--border)',
+              boxShadow: 'var(--shadow-lg)',
+            }}
           >
-            <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-300/20">
-              <div className="space-y-2 py-6">
+            <div
+              className=""
+              style={{ borderColor: 'var(--border)' }}
+            >
+              <div className="">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-stone-100 dark:hover:bg-stone-600 ${
+                    className={`block px-3 py-4 first:rounded-t-lg border-b-1 text-base/7 font-semibold transition-all ${
                       pathname === link.href
-                        ? 'bg-blue-100 text-primary-700 dark:bg-blue-300 hover:text-primary-100'
-                        : ''
+                        ? 'cursor-default'
+                        : 'hover:opacity-80 transition-opacity'
                     }`}
+                    style={{
+                      backgroundColor:
+                        pathname === link.href
+                          ? 'var(--input)'
+                          : 'transparent',
+                      color:
+                        pathname === link.href
+                          ? 'var(--accent-foreground)'
+                          : 'var(--card-foreground)',
+                      borderColor: 'var(--border)',
+                    }}
+                    onMouseEnter={(e) => {
+                      if (pathname !== link.href) {
+                        e.currentTarget.style.backgroundColor =
+                          'var(--primary)';
+                        e.currentTarget.style.color =
+                          'var(--primary-foreground)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (pathname !== link.href) {
+                        e.currentTarget.style.backgroundColor =
+                          'transparent';
+                        e.currentTarget.style.color =
+                          'var(--card-foreground)';
+                      }
+                    }}
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="">
                 <Link
                   href="tel:3602750279"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-stone-100 dark:hover:bg-stone-600"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-4 border-t-1 rounded-b-lg text-base/7 font-semibold transition-colors"
+                  style={{
+                    color: 'var(--card-foreground)',
+                    borderColor: 'var(--border)',
+                  }}
+                  title="Call Tahuya River Valley Water District"
+                  aria-label="Call Tahuya River Valley Water District"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor =
+                      'var(--primary)';
+                    e.currentTarget.style.color =
+                      'var(--primary-foreground)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor =
+                      'transparent';
+                    e.currentTarget.style.color =
+                      'var(--card-foreground)';
+                  }}
                 >
                   <span aria-hidden="true">
                     <FaPhone className="inline size-4" />
