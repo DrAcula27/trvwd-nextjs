@@ -37,11 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-[auto_1fr_auto]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-[72_1fr_auto]`}
       >
         <ThemeProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="row-start-2">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
