@@ -1,0 +1,110 @@
+@layer components {
+  .nav-header {
+    @apply row-start-1 fixed top-0 w-full z-50 transition-all duration-300;
+  }
+
+  .nav-header-scrolled {
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+    color: var(--secondary-foreground);
+  }
+
+  .nav-header-transparent {
+    background-color: transparent;
+    color: var(--foreground);
+  }
+
+  .nav-link {
+    @apply text-sm/6 font-semibold transition-all duration-200 px-3 py-2 rounded-lg;
+    color: var(--foreground);
+    border: 1px solid transparent;
+  }
+
+  .nav-link:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  .nav-link-active {
+    color: var(--primary);
+    border-color: var(--primary);
+    cursor: default;
+  }
+
+  .nav-link-active:hover {
+    background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .nav-phone {
+    @apply text-sm/6 font-semibold transition-colors duration-200;
+    color: var(--foreground);
+  }
+
+  .nav-phone:hover {
+    opacity: 0.8;
+  }
+
+  .nav-mobile-button {
+    @apply lg:hidden p-2 transition-colors duration-200 cursor-pointer;
+    color: var(--foreground);
+  }
+
+  .nav-mobile-button:hover {
+    opacity: 0.8;
+  }
+
+  .nav-mobile-menu {
+    @apply mt-4 flow-root rounded-lg border shadow-lg;
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-mobile-item {
+    @apply block px-3 py-4 text-base/7 font-semibold transition-all duration-200;
+    color: var(--card-foreground);
+    background-color: transparent;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-mobile-item:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .nav-mobile-item:first-child {
+    @apply rounded-t-lg;
+  }
+
+  .nav-mobile-item:last-child {
+    @apply rounded-b-lg;
+    border-bottom: none;
+  }
+
+  .nav-mobile-item-active {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    cursor: default;
+  }
+
+  .nav-mobile-item-active:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  .nav-mobile-phone {
+    @apply block px-3 py-4 rounded-b-lg text-base/7 font-semibold transition-all duration-200;
+    color: var(--card-foreground);
+    background-color: transparent;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-mobile-phone:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
