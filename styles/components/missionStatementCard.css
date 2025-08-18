@@ -1,0 +1,39 @@
+@layer components {
+  .mission-statement-card {
+    @apply max-w-3xl mx-auto;
+    @apply flex flex-col justify-between gap-3 p-6;
+  }
+
+  .mission-statement-content {
+    @apply text-center;
+    @apply flex flex-col items-center;
+  }
+
+  .mission-statement-text {
+    @apply text-left;
+  }
+
+  .mission-statement-card .btn-primary {
+    @apply mt-0 w-full text-lg py-4;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .mission-statement-card {
+      padding: 1.5rem;
+      margin: 0 1rem;
+    }
+
+    .mission-statement-card .title {
+      @apply text-2xl;
+    }
+
+    .mission-statement-card .subtitle {
+      @apply text-lg;
+    }
+
+    .mission-statement-card .btn-primary {
+      @apply text-base py-3;
+    }
+  }
+}

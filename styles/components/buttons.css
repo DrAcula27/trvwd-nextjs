@@ -1,0 +1,56 @@
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.9;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-base font-medium rounded-lg transition-all duration-300;
+    color: var(--foreground);
+    background-color: transparent;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  .btn-ghost:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .btn-home {
+    @apply w-fit;
+  }
+}

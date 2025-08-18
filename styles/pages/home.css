@@ -1,0 +1,14 @@
+@layer components {
+  .home-hero {
+    @apply w-full max-w-6xl p-8 flex flex-col mx-auto gap-6 xl:flex-row;
+  }
+
+  .home-section {
+    @apply w-full max-w-6xl p-8 flex flex-col mx-auto gap-6;
+    @apply text-center items-center;
+  }
+
+  .home-news-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+  }
+}

@@ -1,0 +1,249 @@
+@import 'tailwindcss';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/typography.css';
+@import './components/navigation.css';
+@import './components/footer.css';
+@import './components/meetingCard.css';
+@import './components/missionStatementCard.css';
+@import './pages/home.css';
+
+@theme {
+  /* custom color palette */
+  --color-charcoal: #333333;
+  --color-gray: #555555;
+  --color-gray-light: #777777;
+  --color-gray-lighter: #999999;
+  --color-slate: #d1d1d1;
+  --color-slate-light: #e6e6e6;
+  --color-slate-lighter: #f9f9f9;
+  --color-light: #fefefe;
+  --color-dark: #2a2a2a;
+  --color-blue-light: #50acc1;
+  --color-blue: #3598ab;
+  --color-blue-dark: #004859;
+  --color-green-light: #589c77;
+  --color-green: #80ab68;
+  --color-green-dark: #2b7455;
+
+  /* semantic color scales */
+  --color-neutral-50: #fefefe;
+  --color-neutral-100: #f9f9f9;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-300: #d1d1d1;
+  --color-neutral-400: #999999;
+  --color-neutral-500: #777777;
+  --color-neutral-600: #555555;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #2a2a2a;
+  --color-neutral-900: #1a1a1a;
+
+  --color-primary-50: #e6f4f7;
+  --color-primary-100: #b3e0e8;
+  --color-primary-200: #80cbd9;
+  --color-primary-300: #66b7c8;
+  --color-primary-400: #50acc1;
+  --color-primary-500: #3598ab;
+  --color-primary-600: #2a7a8a;
+  --color-primary-700: #1f5c69;
+  --color-primary-800: #004859;
+  --color-primary-900: #003642;
+
+  --color-secondary-50: #f0f7f4;
+  --color-secondary-100: #d4e8dc;
+  --color-secondary-200: #b8d9c4;
+  --color-secondary-300: #9bc9ac;
+  --color-secondary-400: #80ab68;
+  --color-secondary-500: #589c77;
+  --color-secondary-600: #4a8464;
+  --color-secondary-700: #3c6c51;
+  --color-secondary-800: #2b7455;
+  --color-secondary-900: #1a4d37;
+}
+
+@layer base {
+  :root {
+    /* light mode (default) semantic variables */
+    --background: #fefefe;
+    --foreground: #333333;
+    --muted: #f9f9f9;
+    --muted-foreground: #777777;
+    --popover: #fefefe;
+    --popover-foreground: #333333;
+    --card: #fefefe;
+    --card-foreground: #333333;
+    --border: #d1d1d1;
+    --input: #d1d1d1;
+    --primary: #3598ab;
+    --primary-foreground: #fefefe;
+    --secondary: #589c77;
+    --secondary-foreground: #fefefe;
+    --accent: #f9f9f9;
+    --accent-foreground: #333333;
+    --destructive: #ef4444;
+    --destructive-foreground: #fefefe;
+    --ring: #3598ab;
+    --radius: 0.5rem;
+
+    /* shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(51, 51, 51, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(51, 51, 51, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(51, 51, 51, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(51, 51, 51, 0.1);
+
+    /* font variables */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+
+  /* dark mode when explicitly set */
+  [data-theme='dark'] {
+    --background: #1a1a1a;
+    --foreground: #f9f9f9;
+    --muted: #2a2a2a;
+    --muted-foreground: #d1d1d1;
+    --popover: #333333;
+    --popover-foreground: #f9f9f9;
+    --card: #2a2a2a;
+    --card-foreground: #f9f9f9;
+    --border: #555555;
+    --input: #555555;
+    --primary: #50acc1;
+    --primary-foreground: #1a1a1a;
+    --secondary: #80ab68;
+    --secondary-foreground: #1a1a1a;
+    --accent: #333333;
+    --accent-foreground: #f9f9f9;
+    --destructive: #ef4444;
+    --destructive-foreground: #f9f9f9;
+    --ring: #50acc1;
+
+    /* darker shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Light mode when explicitly set */
+  [data-theme='light'] {
+    --background: #fefefe;
+    --foreground: #333333;
+    --muted: #f9f9f9;
+    --muted-foreground: #777777;
+    --popover: #fefefe;
+    --popover-foreground: #333333;
+    --card: #fefefe;
+    --card-foreground: #333333;
+    --border: #d1d1d1;
+    --input: #d1d1d1;
+    --primary: #3598ab;
+    --primary-foreground: #fefefe;
+    --secondary: #589c77;
+    --secondary-foreground: #fefefe;
+    --accent: #f9f9f9;
+    --accent-foreground: #333333;
+    --destructive: #ef4444;
+    --destructive-foreground: #fefefe;
+    --ring: #3598ab;
+  }
+
+  /* System preference dark mode (only when no explicit theme is set) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --background: #1a1a1a;
+      --foreground: #f9f9f9;
+      --muted: #2a2a2a;
+      --muted-foreground: #d1d1d1;
+      --popover: #333333;
+      --popover-foreground: #f9f9f9;
+      --card: #2a2a2a;
+      --card-foreground: #f9f9f9;
+      --border: #555555;
+      --input: #555555;
+      --primary: #50acc1;
+      --primary-foreground: #1a1a1a;
+      --secondary: #80ab68;
+      --secondary-foreground: #1a1a1a;
+      --accent: #333333;
+      --accent-foreground: #f9f9f9;
+      --destructive: #ef4444;
+      --destructive-foreground: #f9f9f9;
+      --ring: #50acc1;
+
+      /* darker shadows for dark mode */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  /* base element styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono), system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* remove default margins and improve typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--foreground);
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+
+  a {
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+  }
+
+  /* focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @layer components {
+    .page {
+      @apply flex flex-col items-center justify-items-center min-h-full p-8 pb-20 gap-16 sm:p-20;
+    }
+
+    .section-style-1 {
+      @apply w-full;
+      background: var(--muted);
+    }
+
+    .section-style-2 {
+      @apply w-full;
+      background: var(--background);
+    }
+  }
+}
