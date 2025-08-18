@@ -5,6 +5,7 @@
 @import './components/navigation.css';
 @import './components/footer.css';
 @import './components/meetingCard.css';
+@import './components/missionStatementCard.css';
 @import './pages/home.css';
 
 @theme {
@@ -212,9 +213,37 @@
     color: var(--foreground);
   }
 
+  a {
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+  }
+
   /* focus styles for accessibility */
   *:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+  }
+
+  @layer components {
+    .page {
+      @apply flex flex-col items-center justify-items-center min-h-full p-8 pb-20 gap-16 sm:p-20;
+    }
+
+    .section-style-1 {
+      @apply w-full;
+      background: var(--muted);
+    }
+
+    .section-style-2 {
+      @apply w-full;
+      background: var(--background);
+    }
   }
 }

@@ -4,6 +4,7 @@
     background-color: var(--primary);
     color: var(--primary-foreground);
     box-shadow: var(--shadow-sm);
+    font-weight: 600;
   }
 
   .btn-primary:hover {
@@ -47,5 +48,9 @@
   .btn-ghost:focus {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+  }
+
+  .btn-home {
+    @apply w-fit;
   }
 }
