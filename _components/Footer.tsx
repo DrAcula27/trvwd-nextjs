@@ -17,7 +17,7 @@ export default function Footer() {
         {/* mission statement section */}
         <div className="footer-mission-section">
           <Image
-            src="/logo_NoText.png"
+            src="/images/logos/logo_NoText.png"
             alt="Tahuya River Valley Water District Logo"
             width={150}
             height={150}
