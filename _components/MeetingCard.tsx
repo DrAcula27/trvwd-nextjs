@@ -4,6 +4,7 @@ import {
   FaMapLocationDot,
   FaTriangleExclamation,
 } from 'react-icons/fa6';
+import Link from 'next/link';
 
 export default function MeetingCard() {
   return (
@@ -65,9 +66,9 @@ export default function MeetingCard() {
         </div>
       </div>
 
-      <a href="/meetings" className="btn-primary">
+      <Link href="/meetings" className="btn-primary">
         View Meeting Minutes and Records
-      </a>
+      </Link>
     </div>
   );
 }
