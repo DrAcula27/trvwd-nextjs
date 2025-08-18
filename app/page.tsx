@@ -97,7 +97,24 @@ export default async function Home() {
         </div>
       </section>
       <section className="section-style-1">
-        {/* mentions districts' testing and reporting policies with a button that links to the reports page */}
+        <div className="home-section">
+          <h3 className="subtitle">Tests and Reports</h3>
+          <h2 className="title">
+            We prioritize your health and safety by delivering clean
+            and pure water.
+          </h2>
+          <p>
+            Our comprehensive water quality report ensures
+            transparency and adherence to the highest standards.
+            Through advanced filtration, rigorous testing, and
+            constant monitoring, we guarantee that the water you
+            receive is free from contaminants. Trust us to provide you
+            with the best water quality for your peace of mind.
+          </p>
+          <Link href="/reports" className="btn-primary btn-home">
+            View Reports
+          </Link>
+        </div>
       </section>
     </main>
   );
