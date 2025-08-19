@@ -6,7 +6,7 @@ export default function Staff() {
       <h1 className="title mt-6 p-4 text-center">
         Tahuya River Valley Water District Staff and Commission
       </h1>
-      <section className="section-style-1 p-4 flex flex-col items-center justify-center sm:flex-row">
+      <section className="bg-style-1 p-4 flex flex-col items-center justify-center sm:flex-row">
         <div className="card max-w-fit mx-auto">
           <h2 className="card-title">Staff</h2>
           <h3 className="card-subtitle">

@@ -41,7 +41,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navbar />
-          <main className="row-start-2">{children}</main>
+          <div className="row-start-2">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

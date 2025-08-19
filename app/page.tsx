@@ -59,15 +59,15 @@ export default async function Home() {
   const articles = await getRecentArticles();
   return (
     <main className="page">
-      <section className="section-style-2">
+      <section className="bg-style-2">
         <div className="home-hero">
           <MeetingCard />
 
           <MissionStatementCard />
         </div>
       </section>
-      <section className="section-style-1">
-        <div className="home-section">
+      <section className="bg-style-1">
+        <div className="section-content">
           <h3 className="subtitle">Our Resources</h3>
           <h2 className="title">
             Tahuya River Valley Water District Resources
@@ -85,8 +85,8 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      <section className="section-style-2">
-        <div className="home-section">
+      <section className="bg-style-2">
+        <div className="section-content">
           <h2 className="title">Latest News</h2>
           <div className="">
             <RecentArticles articles={articles} />
@@ -96,8 +96,8 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      <section className="section-style-1">
-        <div className="home-section">
+      <section className="bg-style-1">
+        <div className="section-content">
           <h3 className="subtitle">Tests and Reports</h3>
           <h2 className="title">
             We prioritize your health and safety by delivering clean
