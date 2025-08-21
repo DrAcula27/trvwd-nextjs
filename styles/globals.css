@@ -230,20 +230,25 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+}
 
-  @layer components {
-    .page {
-      @apply flex flex-col items-center justify-items-center min-h-full p-8 pb-20 gap-16 sm:p-20;
-    }
+@layer components {
+  .page {
+    @apply flex flex-col items-center justify-items-center min-h-full gap-16;
+  }
 
-    .section-style-1 {
-      @apply w-full;
-      background: var(--muted);
-    }
+  .bg-style-1 {
+    @apply w-full;
+    background: var(--muted);
+  }
 
-    .section-style-2 {
-      @apply w-full;
-      background: var(--background);
-    }
+  .bg-style-2 {
+    @apply w-full;
+    background: var(--background);
+  }
+
+  .section-content {
+    @apply w-full max-w-6xl p-8 flex flex-col mx-auto gap-6;
+    @apply text-center items-center;
   }
 }
