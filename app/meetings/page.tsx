@@ -7,7 +7,7 @@ export default function Meetings() {
       <h1 className="title mt-6 p-4 text-center">
         Tahuya River Valley Water District Public Records and Meetings
       </h1>
-      <section className="bg-style-2 p-4">
+      <section className="bg-style-2 p-4 sticky top-[75px] z-10 bg-background border-y border-border shadow-sm">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
           <Link href={'#meetings'} className="btn btn-primary">
             Meetings
@@ -27,7 +27,7 @@ export default function Meetings() {
         </div>
       </section>
 
-      <section id="meetings" className="bg-style-1 p-8">
+      <section id="meetings" className="bg-style-1 p-8 scroll-mt-32">
         <div className="max-w-6xl mx-auto">
           <h2 className="title text-center mb-6">
             Tahuya River Valley Water District Commission Meetings
@@ -110,7 +110,10 @@ export default function Meetings() {
         </div>
       </section>
 
-      <section id="public-records" className="bg-style-2 p-8">
+      <section
+        id="public-records"
+        className="bg-style-2 p-8 scroll-mt-26"
+      >
         <div className="section-content">
           <h2 className="title">Public Records</h2>
           <div className="max-w-4xl mx-auto space-y-6">
@@ -139,7 +142,7 @@ export default function Meetings() {
 
             <div className="grid gap-8 mt-12">
               <div className="card">
-                <h3 id="minutes" className="card-title">
+                <h3 id="minutes" className="card-title scroll-mt-44">
                   Meeting Minutes
                 </h3>
                 <p className="text-muted-foreground">
@@ -154,7 +157,10 @@ export default function Meetings() {
               </div>
 
               <div className="card">
-                <h3 id="resolutions" className="card-title">
+                <h3
+                  id="resolutions"
+                  className="card-title scroll-mt-44"
+                >
                   Resolutions
                 </h3>
                 <p className="text-muted-foreground">
@@ -169,7 +175,10 @@ export default function Meetings() {
               </div>
 
               <div className="card">
-                <h3 id="other-records" className="card-title">
+                <h3
+                  id="other-records"
+                  className="card-title scroll-mt-44"
+                >
                   Other Public Records
                 </h3>
                 <p className="text-muted-foreground">
