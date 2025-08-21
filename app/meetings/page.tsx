@@ -1,4 +1,5 @@
 import MeetingCard from '@/_components/MeetingCard';
+import MeetingMinutesDropdown from '@/_components/MeetingMinutesDropdown';
 import Link from 'next/link';
 
 export default function Meetings() {
@@ -69,42 +70,45 @@ export default function Meetings() {
             </div>
 
             <div className="card max-w-2xl">
-              <p>
-                TRVWD meetings are open to the public (except for rare
-                executive sessions,{' '}
-                <Link
-                  href={
-                    'http://apps.leg.wa.gov/RCW/default.aspx?cite=42.30.110'
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Executive sessions (RCW 42.30.110) - Washington State Legislature"
-                  aria-label="Executive sessions (RCW 42.30.110) - Washington State Legislature"
-                >
-                  RCW 42.30.110
-                </Link>
-                ). We welcome everyone to attend our meetings. Public
-                comments are welcome during regular business meeting,
-                but may be limited at the discretion of the
-                Commission.
-              </p>
-              <p>
-                Regular meetings of the Water Commission are held on
-                the fourth Tuesday of each month, beginning at 6pm ,
-                located in the{' '}
-                <Link
-                  href={
-                    'https://www.google.com/maps/place/1665+NE+Tahuya+River+Dr,+Tahuya,+WA+98588/@47.4212847,-122.9742256,236m/data=!3m1!1e3!4m6!3m5!1s0x5491c831cf0cff11:0x11424294f5d50c8d!8m2!3d47.421165!4d-122.973268!16s%2Fg%2F11c27wg_sp?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Tahuya River Valley Community Club Building - Google Maps"
-                  aria-label="Tahuya River Valley Community Club Building - Google Maps"
-                >
-                  Tahuya River Valley Community Club Building
-                </Link>{' '}
-                unless otherwise noted.
-              </p>
+              <h3 className="card-title">Meeting Information</h3>
+              <div className="space-y-4">
+                <p>
+                  TRVWD meetings are open to the public (except for
+                  rare executive sessions,{' '}
+                  <Link
+                    href={
+                      'http://apps.leg.wa.gov/RCW/default.aspx?cite=42.30.110'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Executive sessions (RCW 42.30.110) - Washington State Legislature"
+                    aria-label="Executive sessions (RCW 42.30.110) - Washington State Legislature"
+                  >
+                    RCW 42.30.110
+                  </Link>
+                  ). We welcome everyone to attend our meetings.
+                  Public comments are welcome during regular business
+                  meeting, but may be limited at the discretion of the
+                  Commission.
+                </p>
+                <p>
+                  Regular meetings of the Water Commission are held on
+                  the fourth Tuesday of each month, beginning at 6pm,
+                  located in the{' '}
+                  <Link
+                    href={
+                      'https://www.google.com/maps/place/1665+NE+Tahuya+River+Dr,+Tahuya,+WA+98588/@47.4212847,-122.9742256,236m/data=!3m1!1e3!4m6!3m5!1s0x5491c831cf0cff11:0x11424294f5d50c8d!8m2!3d47.421165!4d-122.973268!16s%2Fg%2F11c27wg_sp?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Tahuya River Valley Community Club Building - Google Maps"
+                    aria-label="Tahuya River Valley Community Club Building - Google Maps"
+                  >
+                    Tahuya River Valley Community Club Building
+                  </Link>{' '}
+                  unless otherwise noted.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -150,9 +154,7 @@ export default function Meetings() {
                   from our commission meetings.
                 </p>
                 <div className="mt-4">
-                  <Link href="#" className="btn btn-primary">
-                    View Minutes
-                  </Link>
+                  <MeetingMinutesDropdown />
                 </div>
               </div>
 
