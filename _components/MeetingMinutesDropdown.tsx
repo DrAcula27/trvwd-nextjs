@@ -22,15 +22,17 @@ const YearDropdown = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="card">
+    <div className="card cursor-pointer">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-4 text-left"
+        className="w-full flex justify-between items-center p-4 text-left cursor-pointer"
         aria-expanded={isOpen}
       >
-        <h3 className="card-title">{year} Meeting Minutes</h3>
+        <h3 className="card-title cursor-pointer">
+          {year} Meeting Minutes
+        </h3>
         <svg
-          className={`w-5 h-5 transition-transform duration-200 ${
+          className={`w-5 h-5 transition-transform duration-200 cursor-pointer ${
             isOpen ? 'rotate-180' : ''
           }`}
           fill="none"
@@ -47,12 +49,12 @@ const YearDropdown = ({
       </button>
 
       {isOpen && (
-        <div className="px-4 pb-4 space-y-2">
+        <div className="px-4 pb-4 space-y-2 cursor-default">
           {meetings.length > 0 ? (
             meetings.map((meeting) => (
               <div
                 key={meeting.id}
-                className="flex justify-between items-center p-3 bg-muted rounded-lg"
+                className="flex justify-between items-center p-3 bg-muted rounded-lg border-b border-border"
               >
                 <div>
                   <p className="font-medium">{meeting.title}</p>
