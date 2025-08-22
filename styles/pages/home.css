@@ -1,6 +1,6 @@
 @layer components {
   .home-hero {
-    @apply w-full max-w-6xl p-8 flex flex-col mx-auto gap-6 xl:flex-row;
+    @apply w-full sm:max-w-6xl flex flex-col mx-auto gap-6 xl:flex-row;
   }
 
   .home-news-grid {

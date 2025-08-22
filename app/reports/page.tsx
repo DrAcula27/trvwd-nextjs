@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function Reports() {
   return (
     <main className="page">
-      <section className="bg-style-1 p-8">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 max-w-6xl mx-auto">
-          <div className="card mt-0 max-w-1/2">
+      <section className="bg-style-1">
+        <div className="page-content">
+          <div className="card mt-0 sm:max-w-1/2">
             <h1 className="title">
               We Prioritize Your Health and Safety
             </h1>
@@ -57,7 +57,7 @@ export default function Reports() {
             width={1008}
             height={756}
             priority
-            className="rounded-lg shadow-lg max-w-1/2 h-auto"
+            className="rounded-lg shadow-lg sm:max-w-1/2 h-auto"
           />
         </div>
       </section>

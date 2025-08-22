@@ -8,7 +8,7 @@ export default function Meetings() {
       <h1 className="title mt-6 p-4 text-center">
         Tahuya River Valley Water District Public Records and Meetings
       </h1>
-      <section className="bg-style-2 p-4 sticky top-[75px] z-10 bg-background border-y border-border shadow-sm">
+      <section className="bg-style-2 sticky top-[75px] z-10 bg-background border-y border-border shadow-sm">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
           <Link href={'#meetings'} className="btn btn-primary">
             Meetings
@@ -28,7 +28,7 @@ export default function Meetings() {
         </div>
       </section>
 
-      <section id="meetings" className="bg-style-1 p-8 scroll-mt-32">
+      <section id="meetings" className="bg-style-1 scroll-mt-32">
         <div className="max-w-6xl mx-auto">
           <h2 className="title text-center mb-6">
             Tahuya River Valley Water District Commission Meetings
@@ -116,7 +116,7 @@ export default function Meetings() {
 
       <section
         id="public-records"
-        className="bg-style-2 p-8 scroll-mt-26"
+        className="bg-style-2 scroll-mt-26"
       >
         <div className="section-content">
           <h2 className="title">Public Records</h2>

@@ -237,14 +237,18 @@
     @apply flex flex-col items-center justify-items-center min-h-full gap-16;
   }
 
-  .bg-style-1 {
-    @apply w-full;
+  .bg-style-1,
+  .bg-style-2 {
+    @apply w-full p-1 sm:p-8;
     background: var(--muted);
   }
 
   .bg-style-2 {
-    @apply w-full;
     background: var(--background);
+  }
+
+  .page-content {
+    @apply flex flex-col md:flex-row justify-center items-center md:items-start gap-2 sm:gap-8 w-full sm:max-w-6xl mx-auto p-4;
   }
 
   .section-content {
