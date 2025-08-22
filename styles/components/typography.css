@@ -10,4 +10,19 @@
     color: var(--muted-foreground);
     line-height: 1.4;
   }
+
+  .bold-text {
+    @apply font-bold;
+    color: var(--foreground);
+  }
+
+  .emphasis-text {
+    @apply italic;
+    color: var(--foreground);
+  }
+
+  .standout-text {
+    @apply font-bold italic;
+    color: var(--secondary);
+  }
 }
