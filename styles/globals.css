@@ -7,6 +7,7 @@
 @import './components/meetingCard.css';
 @import './components/missionStatementCard.css';
 @import './pages/home.css';
+@import './pages/resources.css';
 
 @theme {
   /* custom color palette */
