@@ -1,16 +1,18 @@
-import Image from 'next/image';
+import ContactCard from '@/_components/ContactCard';
+import StaffCard from '@/_components/StaffCard';
 
 export default function Contact() {
   return (
-    <main className="flex flex-col items-center justify-items-center min-h-full p-8 pb-20 gap-16 sm:p-20">
-      <h1>CONTACT</h1>
-      <Image
-        src="/images/logos/logo.png"
-        alt="Tahuya River Valley Water District"
-        width={256}
-        height={128}
-        priority
-      />
+    <main className="page">
+      <section className="bg-style-1">
+        <h1 className="title text-center">
+          Contact Tahuya River Valley Water District
+        </h1>
+        <div className="page-content">
+          <ContactCard />
+          <StaffCard />
+        </div>
+      </section>
     </main>
   );
 }
