@@ -1,64 +1,66 @@
 import MeetingCard from '@/_components/MeetingCard';
 import MissionStatementCard from '@/_components/MissionStatementCard';
 import Link from 'next/link';
-import RecentArticles from '@/_components/RecentArticles';
+// import RecentArticles from '@/_components/RecentArticles';
 
 // Example function to fetch articles (adjust based on your data source)
-async function getRecentArticles() {
-  // Replace this with your actual data fetching logic
-  // This could be from a CMS, database, API, etc.
+// async function getRecentArticles() {
+//   // Replace this with your actual data fetching logic
+//   // This could be from a CMS, database, API, etc.
 
-  const articles = [
-    {
-      id: '1',
-      title: 'Introducing Our New Website',
-      body: 'We are thrilled to announce the launch of our website, designed to provide Tahuya River Valley Water District valued customers with easy access to information and resources. Explore our new features and stay updated with the latest news.',
-      image: '/images/logos/logo_NoText.png',
-      imageAlt: 'Tahuya River Valley Water District Logo',
-      slug: 'introducing-new-website',
-      publishedAt: '2024-08-15T10:00:00Z',
-    },
-    // {
-    //   id: '2',
-    //   title: 'Market Analysis: Understanding Current Trends',
-    //   body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    //   image: '/images/community/tahuyaRiver02.jpg',
-    //   imageAlt: 'Market analysis charts',
-    //   slug: 'market-analysis-current-trends',
-    //   publishedAt: '2024-03-14T14:30:00Z',
-    // },
-    // {
-    //   id: '3',
-    //   title: 'Breaking News: New Technology Revolutionizes Industry',
-    //   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    //   image: '/images/community/waterTower02.jpg',
-    //   imageAlt: 'Technology innovation',
-    //   slug: 'new-technology-revolutionizes-industry',
-    //   publishedAt: '2024-03-15T10:00:00Z',
-    // },
-    // {
-    //   id: '4',
-    //   title: 'Market Analysis: Understanding Current Trends',
-    //   body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    //   image: '/images/community/tahuyaRiver02.jpg',
-    //   imageAlt: 'Market analysis charts',
-    //   slug: 'market-analysis-current-trends',
-    //   publishedAt: '2024-03-14T14:30:00Z',
-    // },
-  ];
+//   const articles = [
+//     {
+//       id: '1',
+//       title: 'Introducing Our New Website',
+//       body: 'We are thrilled to announce the launch of our website, designed to provide Tahuya River Valley Water District valued customers with easy access to information and resources. Explore our new features and stay updated with the latest news.',
+//       image: '/images/logos/logo_NoText.png',
+//       imageAlt: 'Tahuya River Valley Water District Logo',
+//       slug: 'introducing-new-website',
+//       publishedAt: '2024-08-15T10:00:00Z',
+//     },
+//     // {
+//     //   id: '2',
+//     //   title: 'Market Analysis: Understanding Current Trends',
+//     //   body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//     //   image: '/images/community/tahuyaRiver02.jpg',
+//     //   imageAlt: 'Market analysis charts',
+//     //   slug: 'market-analysis-current-trends',
+//     //   publishedAt: '2024-03-14T14:30:00Z',
+//     // },
+//     // {
+//     //   id: '3',
+//     //   title: 'Breaking News: New Technology Revolutionizes Industry',
+//     //   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+//     //   image: '/images/community/waterTower02.jpg',
+//     //   imageAlt: 'Technology innovation',
+//     //   slug: 'new-technology-revolutionizes-industry',
+//     //   publishedAt: '2024-03-15T10:00:00Z',
+//     // },
+//     // {
+//     //   id: '4',
+//     //   title: 'Market Analysis: Understanding Current Trends',
+//     //   body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//     //   image: '/images/community/tahuyaRiver02.jpg',
+//     //   imageAlt: 'Market analysis charts',
+//     //   slug: 'market-analysis-current-trends',
+//     //   publishedAt: '2024-03-14T14:30:00Z',
+//     // },
+//   ];
 
-  // Sort by publishedAt date (most recent first)
-  return articles.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() -
-      new Date(a.publishedAt).getTime()
-  );
-}
+//   // Sort by publishedAt date (most recent first)
+//   return articles.sort(
+//     (a, b) =>
+//       new Date(b.publishedAt).getTime() -
+//       new Date(a.publishedAt).getTime()
+//   );
+// }
 
 export default async function Home() {
-  const articles = await getRecentArticles();
+  // const articles = await getRecentArticles();
+
   return (
     <main className="page">
+      {/* Hero */}
       <section className="bg-style-2">
         <div className="home-hero">
           <MeetingCard />
@@ -66,6 +68,8 @@ export default async function Home() {
           <MissionStatementCard />
         </div>
       </section>
+
+      {/* Resources */}
       <section className="bg-style-1">
         <div className="section-content">
           <h3 className="subtitle">Our Resources</h3>
@@ -85,7 +89,9 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      <section className="bg-style-2">
+
+      {/* News */}
+      {/* <section className="bg-style-2">
         <div className="section-content">
           <h2 className="title">Latest News</h2>
           <div className="">
@@ -95,7 +101,9 @@ export default async function Home() {
             View All News
           </Link>
         </div>
-      </section>
+      </section> */}
+
+      {/* Reports */}
       <section className="bg-style-1">
         <div className="section-content">
           <h3 className="subtitle">Tests and Reports</h3>
