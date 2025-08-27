@@ -22,7 +22,7 @@ export default function MeetingCard() {
           <FaCalendar />
         </div>
         <div className="meeting-info-content">
-          Tuesday, August 26, 2025
+          Tuesday, September 23, 2025
         </div>
       </div>
 
