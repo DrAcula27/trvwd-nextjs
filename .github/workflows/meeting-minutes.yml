@@ -80,4 +80,3 @@ jobs:
              console.error(`Failed to create issue: `, err);
              throw error;
             }
-        # github-token: ${{ secrets.GITHUB_TOKEN }}
