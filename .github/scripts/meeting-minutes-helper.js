@@ -90,30 +90,35 @@ Track the addition of monthly Meeting Minutes to the website.
 
 ### Meeting Details
 - **Date**: ${monthName} ${fourthTuesday}, ${year}
-- **Expected Filename**: \`${year}.${monthPadded}.${day}_MeetingMinutes.pdf\`
-- **Target Directory**: \`/assets/public-records/meeting-notes/${year}/\`
+- **In TRVWD Google Drive**:
+  - **Expected Filename**: \`${year}.${monthPadded}.${day}_Meeting_Minutes.pdf\`
+  - **Target Directory**: \`/Meetings/${year}/\`
+- **In Project**:
+  - **Data to Add**: metadata in JSON format
+  - **Target Location**: \`/data/meeting-minutes.json\`
 
 ### Tasks
 - [ ] Verify accuracy of Meeting Minutes for ${monthName} ${year}
 - [ ] Convert Meeting Minutes to PDF format
 - [ ] Ensure Meeting Minutes PDF follows the naming convention:
-  - [ ] Filename: \`${year}.${monthPadded}.${day}_MeetingMinutes.pdf\`
+  - [ ] Filename: \`${year}.${monthPadded}.${day}_Meeting_Minutes.pdf\`
   - [ ] Format: PDF document
   - [ ] Content: Complete and accurate meeting notes
-- [ ] Add the Meeting Minutes PDF to the correct directory:
-  - [ ] Path: \`/assets/public-records/meeting-notes/${year}/\`
-  - [ ] Verify file is accessible
+- [ ] Add the Meeting Minutes metadata to the correct file:
+  - [ ] Path: \`/data/meeting-minutes.json\`
+  - [ ] Data schema:
+        ,
+          {
+            "id": "YYYY-MM-DD",
+            "title": "MONTH YYYY Meeting Minutes",
+            "date": "YYYY-MM-DD",
+            "googleDriveId": "GOOGLEDRIVEIDSTRING",
+            "directUrl": "https://drive.google.com/file/d/GOOGLEDRIVEIDSTRING/view"
+          }
 - [ ] Test deployment and accessibility:
   - [ ] Check deployment on Netlify
-  - [ ] Verify file loads correctly on website
-  - [ ] Confirm download functionality works
-
-### Acceptance Criteria
-- Meeting minutes are accurately transcribed
-- PDF follows naming convention and is properly formatted
-- File is placed in the correct directory structure
-- Website deployment includes the new file
-- File is accessible to website visitors
+  - [ ] Verify is viewable via 'View PDF' button on website
+  - [ ] Confirm download functionality via 'Download PDF' button on website works
 
 ---
 *This issue was automatically generated on ${date.toLocaleDateString(
