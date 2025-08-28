@@ -5,6 +5,7 @@ import {
   FaTriangleExclamation,
 } from 'react-icons/fa6';
 import Link from 'next/link';
+import MeetingDate from './MeetingDate';
 
 export default function MeetingCard() {
   return (
@@ -22,7 +23,7 @@ export default function MeetingCard() {
           <FaCalendar />
         </div>
         <div className="meeting-info-content">
-          Tuesday, September 23, 2025
+          <MeetingDate />
         </div>
       </div>
 
