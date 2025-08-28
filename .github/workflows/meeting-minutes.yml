@@ -1,0 +1,83 @@
+name: Add Monthly Meeting Minutes
+
+on:
+  schedule:
+    # run at 0100 UTC every Wednesday, which is 1800 Pacific time every Tuesday
+    #  this automatically accounts for PST (UTC-8) and PDT (UTC-7)
+    - cron: '0 1 * * 3'
+  workflow_dispatch: # allows manual triggering (helpful for testing)
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create_meeting_minutes_issue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Create monthly meeting minutes issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const path = require('path');
+
+            // load helper script
+            const scriptPath = path.join(process.cwd(), '.github/scripts/meeting-minutes-helper.js');
+            const helper = require(scriptPath);
+
+            const today = new Date();
+
+            try {
+             // check if issue should be created
+             const shouldCreateIssue = helper.shouldCreateIssueToday(today);
+
+             if (!shouldCreateIssue.create) {
+              console.log(shouldCreateIssue.reason);
+              return;
+             }
+
+             // check for existing issue to prevent duplicates
+             const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              labels: 'meeting-minutes',
+              per_page: 100
+             });
+
+             const issueData = helper.generateIssueData(today);
+
+             const duplicateIssue = existingIssues.data.find(issue => issue.title === issueData.title);
+
+             if (duplicateIssue) {
+              console.log(`Issue "${issueData.title}" already exists at (${duplicateIssue.html_url}). Skipping issue creation.`);
+              return;
+             }
+
+             // create the issue
+             const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueData.title,
+              body: issueData.body,
+              labels: ['meeting-minutes'],
+              assignees: ['DrAcula27']
+             });
+
+             console.log(`Successfully created issue: ${issue.data.html_url}`);
+
+            } catch (err) {
+             console.error(`Failed to create issue: `, err);
+             throw error;
+            }
+        # github-token: ${{ secrets.GITHUB_TOKEN }}
