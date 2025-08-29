@@ -9,6 +9,16 @@
  * @returns {number | null} The date of the 4th Tuesday, or null if none exists
  */
 function getFourthTuesday(year, month) {
+  if (
+    typeof year !== 'number' ||
+    typeof month !== 'number' ||
+    year < 1 ||
+    month < 1 ||
+    month > 12
+  ) {
+    return null;
+  }
+
   const firstDay = new Date(year, month - 1, 1);
   let tuesdayCount = 0;
   let currentDate = new Date(firstDay);
@@ -33,6 +43,10 @@ function getFourthTuesday(year, month) {
  * @returns {Object} Object with 'create' boolean and 'reason' string
  */
 function shouldCreateIssueToday(today) {
+  if (!(today instanceof Date) || isNaN(today)) {
+    return { create: false, reason: 'Invalid date.' };
+  }
+
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
   const todayDate = today.getDate();
@@ -74,38 +88,51 @@ function shouldCreateIssueToday(today) {
  * @returns {Object} Object with 'title' and 'body' strings
  */
 function generateIssueData(date) {
+  if (!(date instanceof Date) || isNaN(date)) {
+    return { title: '', body: '' };
+  }
+
+  // find the 4th Tuesday of the month
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
-  const monthName = date.toLocaleString('en-US', { month: 'long' });
-
   const fourthTuesday = getFourthTuesday(year, month);
-  const day = String(fourthTuesday).padStart(2, '0');
-  const monthPadded = String(month).padStart(2, '0');
+  if (!fourthTuesday) {
+    return { title: '', body: '' };
+  }
 
-  const title = `Add Monthly Meeting Minutes - ${monthName} ${year}`;
+  // create date object for the 4th Tuesday
+  const meetingDate = new Date(year, month - 1, fourthTuesday);
 
+  const monthName = meetingDate.toLocaleString('default', {
+    month: 'long',
+  });
+  const monthNum = String(meetingDate.getMonth() + 1).padStart(
+    2,
+    '0'
+  );
+  const day = String(meetingDate.getDate()).padStart(2, '0');
+  const formattedDate = `${monthName} ${day}, ${year}`;
+  const filename = `${year}.${monthNum}.${day}_Meeting_Minutes.pdf`;
+  const directory = `/Meetings/${year}/`;
+  const dataPath = `/data/meeting-minutes.json`;
+
+  const title = `Add Monthly Meeting Minutes for ${formattedDate}`;
   const body = `
-### Overview
-Track the addition of monthly Meeting Minutes to the website.
-
 ### Meeting Details
-- **Date**: ${monthName} ${fourthTuesday}, ${year}
+- **Date**: ${formattedDate}
 - **In TRVWD Google Drive**:
-  - **Expected Filename**: \`${year}.${monthPadded}.${day}_Meeting_Minutes.pdf\`
-  - **Target Directory**: \`/Meetings/${year}/\`
+  - **Expected Filename**: \`${filename}\`
+  - **Target Directory**: \`${directory}\`
 - **In Project**:
   - **Data to Add**: metadata in JSON format
-  - **Target Location**: \`/data/meeting-minutes.json\`
+  - **Target Location**: \`${dataPath}\`
 
 ### Tasks
-- [ ] Verify accuracy of Meeting Minutes for ${monthName} ${year}
+- [ ] Verify accuracy of Meeting Minutes for ${formattedDate}
 - [ ] Convert Meeting Minutes to PDF format
-- [ ] Ensure Meeting Minutes PDF follows the naming convention:
-  - [ ] Filename: \`${year}.${monthPadded}.${day}_Meeting_Minutes.pdf\`
-  - [ ] Format: PDF document
-  - [ ] Content: Complete and accurate meeting notes
+- [ ] Ensure Meeting Minutes PDF follows the naming convention: \`${filename}\`
 - [ ] Add the Meeting Minutes metadata to the correct file:
-  - [ ] Path: \`/data/meeting-minutes.json\`
+  - [ ] Path: \`${dataPath}\`
   - [ ] Data schema:
         ,
           {
@@ -116,20 +143,9 @@ Track the addition of monthly Meeting Minutes to the website.
             "directUrl": "https://drive.google.com/file/d/GOOGLEDRIVEIDSTRING/view"
           }
 - [ ] Test deployment and accessibility:
-  - [ ] Check deployment on Netlify
+  - [ ] Check deployment
   - [ ] Verify is viewable via 'View PDF' button on website
   - [ ] Confirm download functionality via 'Download PDF' button on website works
-
----
-*This issue was automatically generated on ${date.toLocaleDateString(
-    'en-US',
-    {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }
-  )} by GitHub Actions.*
 `.trim();
 
   return { title, body };
@@ -142,27 +158,36 @@ Track the addition of monthly Meeting Minutes to the website.
  * @returns {Date | null} Next 4th Tuesday date, or null if none in next 12 months
  */
 function getNext4thTuesday(fromDate) {
-  const searchDate = new Date(fromDate);
+  if (!(fromDate instanceof Date) || isNaN(fromDate)) return null;
 
-  // Search up to 12 months ahead
-  for (let i = 0; i < 12; i++) {
-    const year = searchDate.getFullYear();
-    const month = searchDate.getMonth() + 1;
+  let searchDate = new Date(fromDate);
 
-    const fourthTuesday = getFourthTuesday(year, month);
+  // first check if current month has a 4th Tuesday after fromDate
+  let year = searchDate.getFullYear();
+  let month = searchDate.getMonth() + 1;
+  let fourthTuesday = getFourthTuesday(year, month);
 
-    if (
-      fourthTuesday &&
-      (searchDate.getMonth() !== fromDate.getMonth() ||
-        searchDate.getFullYear() !== fromDate.getFullYear() ||
-        fourthTuesday > fromDate.getDate())
-    ) {
-      return new Date(year, month - 1, fourthTuesday);
+  if (fourthTuesday) {
+    const candidate = new Date(year, month - 1, fourthTuesday);
+    if (candidate > fromDate) {
+      return candidate;
     }
+  }
 
-    // Move to next month
+  // search up to 12 months ahead for next 4th Tuesday
+  for (let i = 0; i < 12; i++) {
+    // move to next month
     searchDate.setMonth(searchDate.getMonth() + 1);
     searchDate.setDate(1);
+
+    year = searchDate.getFullYear();
+    month = searchDate.getMonth() + 1;
+    fourthTuesday = getFourthTuesday(year, month);
+
+    if (fourthTuesday) {
+      const candidate = new Date(year, month - 1, fourthTuesday);
+      return candidate;
+    }
   }
 
   return null;
