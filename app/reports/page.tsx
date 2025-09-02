@@ -1,3 +1,4 @@
+import PageTitle from '@/_components/PageTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,11 +6,12 @@ export default function Reports() {
   return (
     <main className="page">
       <section className="bg-style-1">
+        <PageTitle title="Tahuya River Valley Water District Reports" />
         <div className="page-content">
           <div className="card mt-0 sm:max-w-1/2">
-            <h1 className="title">
+            <h2 className="card-title">
               We Prioritize Your Health and Safety
-            </h1>
+            </h2>
             <p>
               Our comprehensive water quality report ensures
               transparency and adherence to the{' '}

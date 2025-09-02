@@ -1,3 +1,4 @@
+import PageTitle from '@/_components/PageTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaPhone } from 'react-icons/fa6';
@@ -6,11 +7,9 @@ export default function Resources() {
   return (
     <main className="page">
       <section className="bg-style-1">
+        <PageTitle title="Tahuya River Valley Water District Resources" />
         <div className="page-content">
           <div className="card mt-0 sm:max-w-1/2">
-            <h1 className="title">
-              Tahuya River Valley Water District Resources
-            </h1>
             <p>
               Valuable information on water management, conservation,
               billing, service requests, and more. Stay informed,
