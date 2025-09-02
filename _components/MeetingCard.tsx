@@ -10,10 +10,10 @@ import MeetingDate from './MeetingDate';
 export default function MeetingCard() {
   return (
     <div className="card meeting-card">
-      <h1 className="title">
+      <h1 className="card-title">
         Tahuya River Valley Water District Commissioner Meeting
       </h1>
-      <h2 className="subtitle">
+      <h2 className="card-subtitle">
         Meetings are held on the fourth Tuesday of every month and are
         open to the public
       </h2>

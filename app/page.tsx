@@ -1,5 +1,6 @@
 import MeetingCard from '@/_components/MeetingCard';
 import MissionStatementCard from '@/_components/MissionStatementCard';
+import PageTitle from '@/_components/PageTitle';
 import Link from 'next/link';
 // import RecentArticles from '@/_components/RecentArticles';
 
@@ -61,7 +62,8 @@ export default async function Home() {
   return (
     <main className="page">
       {/* Hero */}
-      <section className="bg-style-2">
+      <section className="bg-style-1">
+        <PageTitle title="Tahuya River Valley Water District" />
         <div className="home-hero">
           <MeetingCard />
 
@@ -70,7 +72,7 @@ export default async function Home() {
       </section>
 
       {/* Resources */}
-      <section className="bg-style-1">
+      <section className="bg-style-2">
         <div className="section-content">
           <h3 className="subtitle">Our Resources</h3>
           <h2 className="title">
@@ -91,7 +93,7 @@ export default async function Home() {
       </section>
 
       {/* News */}
-      {/* <section className="bg-style-2">
+      {/* <section className="bg-style-1">
         <div className="section-content">
           <h2 className="title">Latest News</h2>
           <div className="">
@@ -104,7 +106,7 @@ export default async function Home() {
       </section> */}
 
       {/* Reports */}
-      <section className="bg-style-1">
+      <section className="bg-style-2">
         <div className="section-content">
           <h3 className="subtitle">Tests and Reports</h3>
           <h2 className="title">

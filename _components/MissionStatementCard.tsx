@@ -12,8 +12,8 @@ export default function MissionStatementCard() {
           height={400}
           className="rounded-lg mb-4"
         />
-        <h1 className="title">Our Mission</h1>
-        <h2 className="subtitle">
+        <h1 className="card-title">Our Mission</h1>
+        <h2 className="card-subtitle">
           The mission of the Tahuya River Valley Water District is to
           provide an ample supply of pure water to the Tahuya River
           Valley Community at a reasonable cost.

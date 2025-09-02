@@ -1,6 +1,6 @@
 @layer components {
   .title {
-    @apply text-3xl font-bold mb-4;
+    @apply text-3xl font-bold mb-4 mt-6 p-4 text-center;
     color: var(--primary);
     line-height: 1.3;
   }
