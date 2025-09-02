@@ -96,7 +96,7 @@ export default function MeetingMinutesDropdowns() {
 
   return (
     <div className="space-y-4">
-      <h2 className="title text-center mb-6">
+      <h2 className="subtitle text-center my-6">
         Meeting Minutes Archive
       </h2>
       {years.map((year) => (
