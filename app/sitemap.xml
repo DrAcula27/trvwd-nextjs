@@ -1,3 +1,10 @@
+<!--
+notes about XML sitemaps
+  - As with all XML files, all tag values must be entity escaped.
+  - Google ignores <priority> and <changefreq> values.
+  - Google uses the <lastmod> value if it's consistently and verifiably (for example by comparing to the last modification of the page) accurate.
+  - The <lastmod> value should reflect the date and time of the last significant update to the page. For example, an update to the main content, the structured data, or links on the page is generally considered significant, however an update to the copyright date is not.
+ -->
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
