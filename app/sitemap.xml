@@ -2,13 +2,13 @@
   <url>
     <loc>https://tahuyarivervalleywaterdistrict.org</loc>
     <lastmod>2025-09-16T15:02:24.021Z</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://tahuyarivervalleywaterdistrict.org/staff</loc>
     <lastmod>2025-09-16T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -26,7 +26,7 @@
   <url>
     <loc>https://tahuyarivervalleywaterdistrict.org/news</loc>
     <lastmod>2025-09-16T15:02:24.021Z</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>quarterly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
@@ -38,7 +38,7 @@
   <url>
     <loc>https://tahuyarivervalleywaterdistrict.org/contact</loc>
     <lastmod>2025-09-16T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
