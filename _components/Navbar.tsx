@@ -11,7 +11,7 @@ import { CustomThemeSelector } from './ThemeToggle';
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -25,11 +25,11 @@ export default function Navbar() {
     { href: '/contact', label: 'Contact' },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => setIsScrolled(window.scrollY > 50);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -50,11 +50,7 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   return (
-    <header
-      className={`nav-header ${
-        isScrolled ? 'nav-header-scrolled' : 'nav-header-transparent'
-      }`}
-    >
+    <header className="nav-header">
       <nav
         aria-label="navigation bar"
         className="container mx-auto px-6 py-4"
