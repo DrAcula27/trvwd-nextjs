@@ -36,6 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta
+        name="google-site-verification"
+        content="huYZOlMBGMcFhtCDBr1dK96xMlJKE3HwsGqAoCHR3bU"
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-[auto_1fr_auto]`}
       >
