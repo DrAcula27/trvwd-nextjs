@@ -235,7 +235,7 @@
 
 @layer components {
   .page {
-    @apply flex flex-col items-center justify-items-center min-h-full gap-16;
+    @apply flex flex-col items-center justify-items-center min-h-full gap-1;
   }
 
   .bg-style-1,

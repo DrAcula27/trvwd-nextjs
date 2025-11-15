@@ -1,4 +1,8 @@
 @layer components {
+  .btn {
+    @apply px-1 sm:px-4 py-1 sm:py-2 rounded font-semibold transition text-xs sm:text-sm;
+  }
+
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300;
     background-color: var(--primary);
