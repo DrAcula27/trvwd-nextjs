@@ -9,31 +9,44 @@ export default function Meetings() {
       <section className="bg-style-1">
         <PageTitle title="Tahuya River Valley Water District Public Records and Meetings" />
       </section>
-      <section className="bg-style-2 sticky top-[75px] z-10 bg-background border-y border-border shadow-sm">
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-          <Link href={'#meetings'} className="btn btn-primary">
+      <section className="bg-style-2 sticky top-[75px] z-10 bg-background border-y border-border shadow-sm py-1">
+        <div className="flex flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center flex-wrap px-2 py-2 sm:py-2">
+          <Link
+            href={'#meetings'}
+            className="btn btn-primary text-xs sm:text-sm"
+          >
             Meetings
           </Link>
-          <Link href={'#public-records'} className="btn btn-primary">
+          <Link
+            href={'#public-records'}
+            className="btn btn-primary text-xs sm:text-sm"
+          >
             Public Records
           </Link>
-          <Link href={'#minutes'} className="btn btn-primary">
+          <Link
+            href={'#minutes'}
+            className="btn btn-primary text-xs sm:text-sm"
+          >
             Minutes
           </Link>
-          <Link href={'#resolutions'} className="btn btn-primary">
+          <Link
+            href={'#resolutions'}
+            className="btn btn-primary text-xs sm:text-sm"
+          >
             Resolutions
           </Link>
-          <Link href={'#other-records'} className="btn btn-primary">
+          <Link
+            href={'#other-records'}
+            className="btn btn-primary text-xs sm:text-sm"
+          >
             Other Records
           </Link>
         </div>
       </section>
 
-      <section id="meetings" className="bg-style-1 scroll-mt-32">
+      <section id="meetings" className="bg-style-1 scroll-mt-[100px]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="title text-center mb-6">
-            Tahuya River Valley Water District Commission Meetings
-          </h2>
+          <h2 className="title text-center mb-6">Meetings</h2>
           <p className="subtitle text-center mb-8">
             As a public commission, Tahuya River Valley Water District
             (TRVWD) is subject to the Open Public Meetings Act (
@@ -117,7 +130,7 @@ export default function Meetings() {
 
       <section
         id="public-records"
-        className="bg-style-2 scroll-mt-26"
+        className="bg-style-2 scroll-mt-[100px]"
       >
         <div className="section-content">
           <h2 className="title">Public Records</h2>
@@ -147,7 +160,10 @@ export default function Meetings() {
 
             <div className="grid gap-8 mt-12">
               <div className="card">
-                <h3 id="minutes" className="card-title scroll-mt-44">
+                <h3
+                  id="minutes"
+                  className="card-title scroll-mt-[175px]"
+                >
                   Meeting Minutes
                 </h3>
                 <p className="text-muted-foreground">
@@ -162,7 +178,7 @@ export default function Meetings() {
               <div className="card">
                 <h3
                   id="resolutions"
-                  className="card-title scroll-mt-44"
+                  className="card-title scroll-mt-[175px]"
                 >
                   Resolutions
                 </h3>
@@ -180,7 +196,7 @@ export default function Meetings() {
               <div className="card">
                 <h3
                   id="other-records"
-                  className="card-title scroll-mt-44"
+                  className="card-title scroll-mt-[175px]"
                 >
                   Other Public Records
                 </h3>
