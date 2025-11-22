@@ -1,9 +1,47 @@
 import PageTitle from '@/_components/PageTitle';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '@/_components/Modal';
 import { FaPhone } from 'react-icons/fa6';
 
-export default function Resources() {
+type SearchParamProps = {
+  searchParams: Promise<Record<string, string>>;
+};
+
+export default async function Resources({
+  searchParams,
+}: SearchParamProps) {
+  const params = await searchParams;
+  const showAutoPayModal = params?.showAutoPayModal === 'true';
+
+  const autoPayContent = (
+    <div className="space-y-3">
+      <p className="font-semibold">
+        How to Set Up Automatic Bank Payments:
+      </p>
+      <ol className="list-decimal list-inside space-y-2 text-sm">
+        <li>Contact your bank or financial institution</li>
+        <li>
+          Request to set up an automatic payment to Tahuya River
+          Valley Water District
+        </li>
+        <li>
+          Provide your account number (found on your water bill)
+        </li>
+        <li>
+          Set the payment amount and frequency (typically monthly)
+        </li>
+        <li>Confirm the payment schedule with your bank</li>
+      </ol>
+      <p className="text-sm mt-4">
+        <strong>Questions?</strong> Contact us at{' '}
+        <Link href="tel:360-275-0535" className="underline">
+          360-275-0535
+        </Link>
+      </p>
+    </div>
+  );
+
   return (
     <main className="page">
       <section className="bg-style-1">
@@ -14,10 +52,20 @@ export default function Resources() {
               Valuable information on water management, conservation,
               billing, service requests, and more. Stay informed,
               access forms, and find answers to common questions.
-              We’re committed to providing you with the resources you
-              need for a sustainable water usage experience.
+              We&apos;re committed to providing you with the resources
+              you need for a sustainable water usage experience.
             </p>
             <ul className="">
+              <li className="resource">
+                <Link
+                  href={'?showAutoPayModal=true'}
+                  title="Have your bank send us your payment automatically each month!"
+                  aria-label="Have your bank send us your payment automatically each month!"
+                >
+                  Have your bank send us your payment automatically
+                  each month!
+                </Link>
+              </li>
               <li className="resource">
                 <Link
                   href={'/images/home/TRVCC-Service-Area.pdf'}
@@ -175,6 +223,12 @@ export default function Resources() {
                 </Link>
               </li>
             </ul>
+            {showAutoPayModal && (
+              <Modal
+                title="Automatic Bank Payments"
+                body={autoPayContent}
+              />
+            )}
           </div>
           <Image
             src="/images/community/tahuyaRiver02.jpg"
