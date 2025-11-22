@@ -1,6 +1,5 @@
-'use client';
+'use client'; // must be client component to use css transitions and useRouter
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -30,29 +29,41 @@ export default function Modal({
 
   return (
     <div
-      className={`fixed inset-0 overflow-y-auto h-full w-full flex items-center justify-center z-50 ${
+      className={`fixed inset-0 overflow-y-auto flex items-center justify-center z-50 transition-all duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
     >
+      {/* overlay */}
       <div
-        className={`p-8 border border-border w-96 shadow-lg rounded-md bg-white dark:bg-stone-900 transition-all duration-300 ${
-          isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-        }`}
+        className="absolute inset-0 backdrop-blur-sm transition-all duration-300"
+        onClick={handleClose}
+        aria-hidden="true"
+      />
+
+      {/* modal panel: responsive width, max height, and scroll if content is tall */}
+      <div
+        className={`relative z-10 w-max-content mx-4 sm:mx-0 max-h-[90vh] overflow-auto
+           bg-[var(--background)] border border-border shadow-lg rounded-md transition-all duration-300 ${
+             isVisible
+               ? 'scale-100 opacity-100'
+               : 'scale-95 opacity-0'
+           }`}
+        style={{ maxWidth: 'min(96vw, 680px)' }}
       >
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="p-2 sm:p-4 flex flex-col items-center space-y-4">
+          <h3 id="modal-title" className="text-2xl font-bold">
             {title}
           </h3>
-          <div className="mt-4 px-7 py-3 text-left">
-            <div className="text-base text-gray-700 dark:text-stone-300">
-              {body}
-            </div>
+          <div id="modal-description" className="text-left">
+            <div className="text-base">{body}</div>
           </div>
-          <div className="flex justify-center mt-6">
-            <button onClick={handleClose} className="btn btn-primary">
-              Close
-            </button>
-          </div>
+          <button onClick={handleClose} className="btn btn-primary">
+            Close
+          </button>
         </div>
       </div>
     </div>

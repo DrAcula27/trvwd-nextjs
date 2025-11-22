@@ -35,10 +35,7 @@ export default async function Resources({
       </ol>
       <p className="text-sm mt-4">
         <strong>Questions?</strong> Contact us at{' '}
-        <Link
-          href="tel:360-275-0535"
-          className="text-blue-600 underline"
-        >
+        <Link href="tel:360-275-0535" className="underline">
           360-275-0535
         </Link>
       </p>
