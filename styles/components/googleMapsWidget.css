@@ -1,0 +1,14 @@
+.google-maps-widget {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.google-maps-widget iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
