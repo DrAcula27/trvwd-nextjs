@@ -6,6 +6,7 @@
 @import './components/footer.css';
 @import './components/meetingCard.css';
 @import './components/missionStatementCard.css';
+@import './components/googleMapsWidget.css';
 @import './pages/home.css';
 @import './pages/resources.css';
 
@@ -119,11 +120,11 @@
     --destructive-foreground: #f9f9f9;
     --ring: #50acc1;
 
-    /* darker shadows for dark mode */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    /* lighter shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgba(100, 100, 100, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(100, 100, 100, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(100, 100, 100, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(100, 100, 100, 0.4);
   }
 
   /* Light mode when explicitly set */
