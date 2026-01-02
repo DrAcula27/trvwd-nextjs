@@ -2,7 +2,9 @@ import Link from 'next/link';
 import PageTitle from '@/_components/PageTitle';
 import MeetingCard from '@/_components/MeetingCard';
 import MeetingInfoCard from '@/_components/MeetingInfoCard';
-import MeetingMinutesDropdown from '@/_components/MeetingMinutesDropdown';
+import MeetingMinutesArchive from '@/_components/MeetingMinutesArchive';
+import ResolutionsArchive from '@/_components/ResolutionsArchive';
+import OtherPublicRecordsArchive from '@/_components/OtherPublicRecordsArchive';
 
 export default function Meetings() {
   return (
@@ -134,7 +136,7 @@ export default function Meetings() {
                   from our commission meetings.
                 </p>
                 <div className="mt-4">
-                  <MeetingMinutesDropdown />
+                  <MeetingMinutesArchive />
                 </div>
               </div>
 
@@ -150,9 +152,7 @@ export default function Meetings() {
                   the water district commission.
                 </p>
                 <div className="mt-4">
-                  <Link href="#" className="btn btn-primary">
-                    View Resolutions
-                  </Link>
+                  <ResolutionsArchive />
                 </div>
               </div>
 
@@ -168,9 +168,7 @@ export default function Meetings() {
                   available for review.
                 </p>
                 <div className="mt-4">
-                  <Link href="#" className="btn btn-primary">
-                    View Other Records
-                  </Link>
+                  <OtherPublicRecordsArchive />
                 </div>
               </div>
             </div>
