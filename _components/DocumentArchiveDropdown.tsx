@@ -78,14 +78,14 @@ const YearDropdown = ({
                   >
                     View PDF
                   </Link>
-                  {downloadBaseUrl && (
+                  {/* {downloadBaseUrl && (
                     <Link
                       href={`${downloadBaseUrl}/${document.id}`}
                       className="btn btn-secondary text-sm px-3 py-1"
                     >
                       Download
                     </Link>
-                  )}
+                  )} */}
                 </div>
               </div>
             ))
@@ -108,7 +108,7 @@ export default function DocumentArchiveDropdown({
 }: DocumentArchiveDropdownProps) {
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 5 }, (_, i) =>
-    (currentYear - i).toString()
+    (currentYear - i).toString(),
   );
 
   return (
