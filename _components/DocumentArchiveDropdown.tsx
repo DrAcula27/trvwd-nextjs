@@ -22,7 +22,7 @@ const YearDropdown = ({
   year,
   documents,
   documentType,
-  downloadBaseUrl,
+  // downloadBaseUrl,
 }: {
   year: string;
   documents: Document[];
