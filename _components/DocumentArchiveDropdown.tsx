@@ -112,7 +112,7 @@ export default function DocumentArchiveDropdown({
   );
 
   return (
-    <div className="space-y-4">
+    <div>
       {showTitle && (
         <h2 className="subtitle text-center my-6">
           {documentType} Archive
