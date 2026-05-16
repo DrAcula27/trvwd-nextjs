@@ -9,7 +9,6 @@ export default function MeetingMinutesArchive() {
       data={meetingData}
       documentType="Meeting Minutes"
       showTitle={true}
-      downloadBaseUrl="/api/meeting-minutes/download"
     />
   );
 }

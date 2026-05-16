@@ -9,7 +9,6 @@ export default function ResolutionsArchive() {
       data={resolutionsData}
       documentType="Resolutions"
       showTitle={true}
-      downloadBaseUrl="/api/resolutions/download"
     />
   );
 }
