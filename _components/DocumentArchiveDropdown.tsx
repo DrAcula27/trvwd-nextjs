@@ -15,19 +15,16 @@ export interface DocumentArchiveDropdownProps {
   data: Record<string, Document[]>;
   documentType: string;
   showTitle?: boolean;
-  downloadBaseUrl?: string;
 }
 
 const YearDropdown = ({
   year,
   documents,
   documentType,
-  // downloadBaseUrl,
 }: {
   year: string;
   documents: Document[];
   documentType: string;
-  downloadBaseUrl?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -78,14 +75,6 @@ const YearDropdown = ({
                   >
                     View PDF
                   </Link>
-                  {/* {downloadBaseUrl && (
-                    <Link
-                      href={`${downloadBaseUrl}/${document.id}`}
-                      className="btn btn-secondary text-sm px-3 py-1"
-                    >
-                      Download
-                    </Link>
-                  )} */}
                 </div>
               </div>
             ))
@@ -104,7 +93,6 @@ export default function DocumentArchiveDropdown({
   data,
   documentType,
   showTitle = true,
-  downloadBaseUrl,
 }: DocumentArchiveDropdownProps) {
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 5 }, (_, i) =>
@@ -124,7 +112,6 @@ export default function DocumentArchiveDropdown({
           year={year}
           documents={data[year] || []}
           documentType={documentType}
-          downloadBaseUrl={downloadBaseUrl}
         />
       ))}
     </div>
