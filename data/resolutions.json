@@ -1,34 +1,73 @@
 {
+  "2025": [
+    {
+      "id": "2025-01",
+      "title": "Resolution 2025-01: 2025 Budget",
+      "date": "2025-10-28",
+      "googleDriveId": "1AyoMnJEVInPPSci6tQu_NWJ1VFIjtFQm",
+      "directUrl": "https://drive.google.com/file/d/1AyoMnJEVInPPSci6tQu_NWJ1VFIjtFQm/view"
+    }
+  ],
   "2024": [
     {
       "id": "2024-01",
-      "title": "Resolution 2024-01: Set up petty cash account",
+      "title": "Resolution 2024-01: Petty Cash Account",
       "date": "2024-01-23",
-      "googleDriveId": "1moGAx2XOUGny7-FxHAJk0REK-vk7HxNe",
-      "directUrl": "https://drive.google.com/file/d/1moGAx2XOUGny7-FxHAJk0REK-vk7HxNe/view"
+      "googleDriveId": "12Iu_4UFzqNtNpxAhvci75LWbNzwV0KqX",
+      "directUrl": "https://drive.google.com/file/d/12Iu_4UFzqNtNpxAhvci75LWbNzwV0KqX/view"
+    },
+    {
+      "id": "2024-01A",
+      "title": "Resolution 2024-01A: Petty Cash Account Amendment",
+      "date": "2024-02-27",
+      "googleDriveId": "13edGdAGhkLOrSdkhzISUyifHRvx_HhOd",
+      "directUrl": "https://drive.google.com/file/d/13edGdAGhkLOrSdkhzISUyifHRvx_HhOd/view"
     },
     {
       "id": "2024-02",
-      "title": "Resolution 2024-02: Update rates and fees",
-      "date": "2024-02-20",
-      "googleDriveId": "1MeFmZg1ax0PmJ6xgbRMmzVK7GU-eF2He",
-      "directUrl": "https://drive.google.com/file/d/1MeFmZg1ax0PmJ6xgbRMmzVK7GU-eF2He/view"
+      "title": "Resolution 2024-02: Update Rates and Fees",
+      "date": "2024-02-27",
+      "googleDriveId": "1AFGHEOAxjemN6WhbWrloPn2E-fT3pQIw",
+      "directUrl": "https://drive.google.com/file/d/1AFGHEOAxjemN6WhbWrloPn2E-fT3pQIw/view"
+    },
+    {
+      "id": "2024-03",
+      "title": "Resolution 2024-03: Update Rates and Fees",
+      "date": "2024-02-27",
+      "googleDriveId": "19ajykD6MejL4t3-1jYD040VUFfMZxaqv",
+      "directUrl": "https://drive.google.com/file/d/19ajykD6MejL4t3-1jYD040VUFfMZxaqv/view"
+    }
+  ],
+  "2023": [
+    {
+      "id": "2023-01",
+      "title": "Resolution 2023-01: 2024 Budget",
+      "date": "2023-10-24",
+      "googleDriveId": "1NmZHZFJThYv8JdAgfEI6H4oq3C-Q_ntm",
+      "directUrl": "https://drive.google.com/file/d/1NmZHZFJThYv8JdAgfEI6H4oq3C-Q_ntm/view"
     }
   ],
   "2022": [
     {
       "id": "2022-01",
-      "title": "Resolution 2022-01: Approve annual budget",
+      "title": "Resolution 2022-01: Revenue Receipting Policy",
       "date": "2022-05-24",
-      "googleDriveId": "18MOA659Zzufe5PNxvqkV-GGOpMxZLP9B",
-      "directUrl": "https://drive.google.com/file/d/18MOA659Zzufe5PNxvqkV-GGOpMxZLP9B/view"
+      "googleDriveId": "1r-1Uq0QN4u_BVWZOycpDe7QvwKhbLZRt",
+      "directUrl": "https://drive.google.com/file/d/1r-1Uq0QN4u_BVWZOycpDe7QvwKhbLZRt/view"
     },
     {
       "id": "2022-02",
-      "title": "Resolution 2022-02: Update rates and fees",
-      "date": "2022-11-15",
-      "googleDriveId": "1rs6XQt66ZssNshwNwIwqiet_4XBBr0Ey",
-      "directUrl": "https://drive.google.com/file/d/1rs6XQt66ZssNshwNwIwqiet_4XBBr0Ey/view"
+      "title": "Resolution 2022-02: Rates and Fees Update",
+      "date": "2022-10-25",
+      "googleDriveId": "1B3f61SPo6kX7WN5gVI8AV5TOtKkGqJIo",
+      "directUrl": "https://drive.google.com/file/d/1B3f61SPo6kX7WN5gVI8AV5TOtKkGqJIo/view"
+    },
+    {
+      "id": "2022-03",
+      "title": "Resolution 2022-03: 2023 Budget",
+      "date": "2022-10-25",
+      "googleDriveId": "1pfyqB9NsyLGKsiATtSXbX33htMKwU7xG",
+      "directUrl": "https://drive.google.com/file/d/1pfyqB9NsyLGKsiATtSXbX33htMKwU7xG/view"
     }
   ]
 }

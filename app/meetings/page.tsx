@@ -4,7 +4,7 @@ import MeetingCard from '@/_components/MeetingCard';
 import MeetingInfoCard from '@/_components/MeetingInfoCard';
 import MeetingMinutesArchive from '@/_components/MeetingMinutesArchive';
 import ResolutionsArchive from '@/_components/ResolutionsArchive';
-import OtherPublicRecordsArchive from '@/_components/OtherPublicRecordsArchive';
+// import OtherPublicRecordsArchive from '@/_components/OtherPublicRecordsArchive';
 
 export default function Meetings() {
   return (
@@ -38,12 +38,12 @@ export default function Meetings() {
           >
             Resolutions
           </Link>
-          <Link
+          {/* <Link
             href={'#other-records'}
             className="btn btn-primary text-xs sm:text-sm"
           >
             Other Records
-          </Link>
+          </Link> */}
         </div>
       </section>
 
@@ -135,6 +135,15 @@ export default function Meetings() {
                   Access official meeting minutes and documentation
                   from our commission meetings.
                 </p>
+                <p className="text-muted-foreground">
+                  Minutes are added after they are approved by the
+                  commission, which typically occurs at the next
+                  regular meeting after the meeting to which they pertain.
+                  For example, minutes from a January meeting would
+                  typically be approved at the February regular
+                  meeting and added to this archive shortly
+                  thereafter.
+                </p>
                 <div className="mt-4">
                   <MeetingMinutesArchive />
                 </div>
@@ -156,7 +165,7 @@ export default function Meetings() {
                 </div>
               </div>
 
-              <div className="card">
+              {/* <div className="card">
                 <h3
                   id="other-records"
                   className="card-title scroll-mt-[175px]"
@@ -170,7 +179,7 @@ export default function Meetings() {
                 <div className="mt-4">
                   <OtherPublicRecordsArchive />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
