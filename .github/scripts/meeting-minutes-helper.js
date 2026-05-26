@@ -145,7 +145,6 @@ function generateIssueData(date) {
 - [ ] Test deployment and accessibility:
   - [ ] Check deployment
   - [ ] Verify is viewable via 'View PDF' button on website
-  - [ ] Confirm download functionality via 'Download PDF' button on website works
 `.trim();
 
   return { title, body };
