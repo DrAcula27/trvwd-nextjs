@@ -68,14 +68,24 @@ export default async function Resources({
               </li>
               <li className="resource">
                 <Link
-                  href={'/images/home/TRVCC-Service-Area.pdf'}
+                  href={'/images/home/TRVWD_Service_Area.png'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Tahuya River Valley Water District Service Area Map (PDF)"
-                  aria-label="Tahuya River Valley Water District Service Area Map (PDF)"
+                  title="Tahuya River Valley Water District Service Area Map"
+                  aria-label="Tahuya River Valley Water District Service Area Map"
                 >
                   Tahuya River Valley Water District Service Area Map
-                  (PDF)
+                </Link>
+              </li>
+              <li className="resource">
+                <Link
+                  href={'/images/home/TRVWD_as-built_map.pdf'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Tahuya River Valley Water District As-Built Map"
+                  aria-label="Tahuya River Valley Water District As-Built Map"
+                >
+                  Tahuya River Valley Water District As-Built Map
                 </Link>
               </li>
               <li className="resource">
