@@ -79,6 +79,17 @@ export default async function Resources({
               </li>
               <li className="resource">
                 <Link
+                  href={'/images/home/TRVWD_as-built_map.pdf'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Tahuya River Valley Water District As-Built Map"
+                  aria-label="Tahuya River Valley Water District As-Built Map"
+                >
+                  Tahuya River Valley Water District As-Built Map
+                </Link>
+              </li>
+              <li className="resource">
+                <Link
                   href={
                     'https://mrsc.org/explore-topics/utilities/water-sewer/water-sewer-districts-list'
                   }
