@@ -35,7 +35,7 @@ export default function MissionStatementCard() {
           <p>
             To view a PDF map of our service area, click{' '}
             <a
-              href="/images/home/TRVCC-Service-Area.pdf"
+              href="/images/home/TRVWD_Service_Area.png"
               className="hover:underline"
               target="_blank"
               rel="noopener noreferrer"

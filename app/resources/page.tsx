@@ -68,7 +68,7 @@ export default async function Resources({
               </li>
               <li className="resource">
                 <Link
-                  href={'/images/home/TRVCC-Service-Area.pdf'}
+                  href={'/images/home/TRVWD_Service_Area.png'}
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Tahuya River Valley Water District Service Area Map (PDF)"
