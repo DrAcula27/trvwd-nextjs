@@ -71,11 +71,10 @@ export default async function Resources({
                   href={'/images/home/TRVWD_Service_Area.png'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Tahuya River Valley Water District Service Area Map (PDF)"
-                  aria-label="Tahuya River Valley Water District Service Area Map (PDF)"
+                  title="Tahuya River Valley Water District Service Area Map"
+                  aria-label="Tahuya River Valley Water District Service Area Map"
                 >
                   Tahuya River Valley Water District Service Area Map
-                  (PDF)
                 </Link>
               </li>
               <li className="resource">
