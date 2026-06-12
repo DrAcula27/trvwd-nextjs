@@ -1,18 +1,25 @@
 import PageTitle from '@/_components/PageTitle';
+import RecentArticles from '@/_components/RecentArticles';
+import getRecentArticles from '@/_lib/api';
 
-export default function News() {
+export default async function News() {
+  const articles = await getRecentArticles();
+
   return (
     <main className="page">
       <section className="bg-style-1">
         <PageTitle title="Tahuya River Valley Water District News" />
         <div className="page-content flex flex-col justify-center items-center">
-          <h2 className="subtitle">Coming Soon!</h2>
-          <p>
-            Please bear with us as we develop this page. Check back
-            regularly for updates!
-          </p>
+          <ul className="article-list">
+            {articles.map((article) => (
+              <li key={article.id} className="article-item">
+                <RecentArticles articles={[article]} />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>
   );
 }
+

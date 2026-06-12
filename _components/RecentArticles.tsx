@@ -1,16 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-// Define the article type
-interface Article {
-  id: string;
-  title: string;
-  body: string;
-  image: string;
-  imageAlt?: string;
-  slug: string;
-  publishedAt: string; // or Date
-}
+import { Article } from '@/_types/article';
 
 interface RecentArticlesProps {
   articles: Article[];
