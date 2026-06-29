@@ -31,13 +31,14 @@ export default function Reports() {
               receive is free from contaminants. Trust us to provide
               you with the best water quality for your peace of mind.
             </p>
-            <p className="bold-text">
-              To view all reports on the Tahuya River Valley Water
-              District, click the link below to visit Washington
-              State&apos;s department of health. Read and accept the
-              disclaimer and search for Tahuya River Valley Water
-              District. The Water System ID is{' '}
-              <span className="standout-text">87115N</span>
+            <p>
+              To view all{' '}
+              <strong>Department of Health (DOH) reports</strong> on
+              the Tahuya River Valley Water District, click the link
+              below to visit Washington State&apos;s department of
+              health. Read and accept the disclaimer and search for
+              Tahuya River Valley Water District. The Water System ID
+              is <span className="standout-text">87115N</span>
               . <br />
               <Link
                 href={
@@ -50,6 +51,28 @@ export default function Reports() {
               >
                 Washington State Department of Health - Division of
                 Environmental Health - Office of Drinking Water
+              </Link>
+            </p>
+            <p>
+              To view all{' '}
+              <strong>Consumer Confidence Reports (CCRs)</strong>,
+              click the link below, scroll down to the &quot;Annual
+              Water Quality Reports&quot; section, find Tahuya River
+              Valley Water District, and select the year you would
+              like to view. H2O Management Services, Inc. provides
+              these reports from 2024 onward. For reports prior to
+              2024, please contact the Tahuya River Valley Water
+              District directly. <br />
+              <Link
+                href={
+                  'https://h2omanagementservicesinc.com/water-quality-reports/'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                title="H2O Management Services, Inc. - Water Quality Reports"
+                aria-label="H2O Management Services, Inc. - Water Quality Reports"
+              >
+                H2O Management Services, Inc. - Water Quality Reports
               </Link>
             </p>
           </div>
