@@ -71,8 +71,33 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Resources */}
+      {/* New Rates */}
       <section className="bg-style-2">
+        <div className="section-content">
+          <h3 className="subtitle">Important Update</h3>
+          <h2 className="title">New Billing Rates</h2>
+          <p>
+            As of June 2026, TRVWD has implemented new billing rates
+            to ensure the sustainability of our water services. We are
+            committed to providing our customers with transparent
+            information regarding these changes. Click the link below
+            to view the updated billing rates.
+          </p>
+          <p>
+            <a
+              href="/images/home/new_rates.pdf"
+              className="btn-primary btn-home"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Understanding Your New Water Usage Rates
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Resources */}
+      <section className="bg-style-1">
         <div className="section-content">
           <h3 className="subtitle">Our Resources</h3>
           <h2 className="title">
